@@ -7,8 +7,9 @@ n/a doesn't mean it doesn't exist, only that I don't know about it.
 
 | Coq Tactic | Lean Tactic | Notes |
 | ---------- | ----------- | ------|
-|  `;`       |   `;`       |       | 
-| `assumption` | `assumption`   |      |
+|  `;`       |   `;`       |       |
+|  `.`       |   `,`       |       |
+| `assumption` | `assumption`   |      |
 | `admit` | `admit` | |
 | `apply` | n/a | lean `apply` is coq `eapply` |
 | `apply H in A` | `note A2 := H A` | Will create a new hypothesis A2, and A will persist |
@@ -22,12 +23,11 @@ n/a doesn't mean it doesn't exist, only that I don't know about it.
 | `destruct` | `cases` | |
 | `destruct x eqn:?` | `destruct x` | |
 | `eapply` | `apply` | |
-| `apply` | n/a | |
 | `exact` | `exact` | |
 | `exfalso` | `exfalso` | |
 | `exists` | `existsi` | |
 | `eexists` | `existsi _` | |
-| `f_equal` | `apply congr_args` | |
+| `f_equal` | `apply congr_args` | only works if `f` is unary |
 | `fail` | `fail_if_success {skip}` | |
 | `first [A | B |.. | X]` | `A <|> B <|> .. <|> X` | | |
 | `generalize x` | `generalize x y` | `y` is name of the new variable, the name must be provided |
@@ -35,6 +35,7 @@ n/a doesn't mean it doesn't exist, only that I don't know about it.
 | `idtac` | `skip` | `skip` does not print, succeeds trivially |
 | `induction` | `induction` | | 
 | `intro` | `intro` | |
+| `intros` | `intros` | |
 | `intuition` | n/a | |
 | `inversion` | n/a | |
 | `left` | `left` | |
