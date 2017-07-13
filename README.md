@@ -9,8 +9,9 @@ The main table is for the Lean release. Notes highlight some tactics that have c
 
 | Coq Tactic | Lean Tactic | Notes |
 | ---------- | ----------- | ------|
-|  `;`       |   `;`       |       | 
-| `assumption` | `assumption`   |      |
+|  `;`       |   `;`       |       |
+|  `.`       |   `,`       |       |
+| `assumption` | `assumption`   |      |
 | `admit` | `admit` | |
 | `apply` | n/a | lean `apply` is coq `eapply` |
 | `apply H in A` | `note A2 := H A` | Will create a new hypothesis A2, and A will persist, `note` is `have` in git versions |
@@ -24,12 +25,11 @@ The main table is for the Lean release. Notes highlight some tactics that have c
 | `destruct` | `cases` | |
 | `destruct x eqn:?` | `destruct x` | |
 | `eapply` | `apply` | |
-| `apply` | n/a | |
 | `exact` | `exact` | |
 | `exfalso` | `exfalso` | |
 | `exists` | `existsi` | |
 | `eexists` | `existsi _` | |
-| `f_equal` | `apply congr_args` | |
+| `f_equal` | `apply congr_args` | only works if `f` is unary |
 | `fail` | `fail_if_success {skip}` | |
 | `first [A | B |.. | X]` | `A <|> B <|> .. <|> X` | `first [A B .. X]` on git| 
 | `generalize x` | `generalize x y` | `y` is name of the new variable, the name must be provided |
@@ -37,6 +37,7 @@ The main table is for the Lean release. Notes highlight some tactics that have c
 | `idtac` | `skip` | `skip` does not print, succeeds trivially |
 | `induction` | `induction` | | 
 | `intro` | `intro` | |
+| `intros` | `intros` | |
 | `intuition` | n/a | |
 | `inversion` | n/a | |
 | `left` | `left` | |
