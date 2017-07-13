@@ -5,6 +5,8 @@ Right now this is for my favorite tactics. Please PR your own or request additio
 
 n/a doesn't mean it doesn't exist, only that I don't know about it.
 
+The main table is for the Lean release. Notes highlight some tactics that have changed in the most recent source versions.
+
 | Coq Tactic | Lean Tactic | Notes |
 | ---------- | ----------- | ------|
 |  `;`       |   `;`       |       | 
@@ -49,7 +51,7 @@ n/a doesn't mean it doesn't exist, only that I don't know about it.
 | `right` | `right` | |
 | `simpl` | `dsimp` | to some approximation at least.. |
 | `simpl in` | `dsimp at` | |
-| `simpl in *` | `dsimp at *`| git, not release |
+| `simpl in *` | n/a| `dsimp at *` on git |
 | `solve` | `solve1` | |
 | `specialize H x` | `note H2 := H x` | H remains, note is `have` in git versions |
 | `split` | `split` | |
