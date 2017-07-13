@@ -11,7 +11,7 @@ n/a doesn't mean it doesn't exist, only that I don't know about it.
 | `assumption` | `assumption`   |      |
 | `admit` | `admit` | |
 | `apply` | n/a | lean `apply` is coq `eapply` |
-| `apply H in A` | `note A2 := H A` | Will create a new hypothesis A2, and A will persist |
+| `apply H in A` | `note A2 := H A` | Will create a new hypothesis A2, and A will persist, `note` is `have` in git versions |
 | `assert` | `assert` | |
 | `auto`  | n/a | |
 | `autorewrite` | n/a | `simp using <attribute>` approximates |
@@ -29,7 +29,7 @@ n/a doesn't mean it doesn't exist, only that I don't know about it.
 | `eexists` | `existsi _` | |
 | `f_equal` | `apply congr_args` | |
 | `fail` | `fail_if_success {skip}` | |
-| `first [A | B |.. | X]` | `A <|> B <|> .. <|> X` | | |
+| `first [A | B |.. | X]` | `A <|> B <|> .. <|> X` | `first [A B .. X]` on git| 
 | `generalize x` | `generalize x y` | `y` is name of the new variable, the name must be provided |
 | `generalize dependent` | `revert` | |
 | `idtac` | `skip` | `skip` does not print, succeeds trivially |
@@ -39,8 +39,8 @@ n/a doesn't mean it doesn't exist, only that I don't know about it.
 | `inversion` | n/a | |
 | `left` | `left` | |
 | `omega` | n/a | smt support? |
-| `pose` | `pose` | |
-| `pose proof` | `note` | |
+| `pose` | `pose` | `let` in git versions |
+| `pose proof` | `note` | `have` in git versions |
 | `progress` | n/a | lean tactics by convention should fail if they don't progress|
 | `remember x as y eqn:h` | `generalize2 x y h` | names must be provided |
 | `revert` | n/a | always dependent|
@@ -49,9 +49,9 @@ n/a doesn't mean it doesn't exist, only that I don't know about it.
 | `right` | `right` | |
 | `simpl` | `dsimp` | to some approximation at least.. |
 | `simpl in` | `dsimp at` | |
-| `simpl in *` | `dsimp at *`| new versions |
+| `simpl in *` | `dsimp at *`| git, not release |
 | `solve` | `solve1` | |
-| `specialize H x` | `note H2 := H x` | H remains |
+| `specialize H x` | `note H2 := H x` | H remains, note is `have` in git versions |
 | `split` | `split` | |
 | `subst x` | `subst x` | |
 | `subst` | n/a | |
