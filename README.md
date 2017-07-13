@@ -1,5 +1,7 @@
 # Coq to Lean Tactic Cheatsheet
-Right now this is for my favorite tactics. Please PR your own or request additions.
+This is a guide for [coq](https://coq.inria.fr/) users getting into writing [lean](https://leanprover.github.io/) proofs.
+
+Right now this is for my favorite tactics. Please PR your own or request additions via issue tracker or [lean gitter](https://gitter.im/leanprover_public/Lobby).
 
 n/a doesn't mean it doesn't exist, only that I don't know about it.
 
