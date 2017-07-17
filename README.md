@@ -39,7 +39,7 @@ The main table is for the Lean release. Notes highlight some tactics that have c
 | `intro` | `intro` | |
 | `intros` | `intros` | |
 | `intuition` | n/a | |
-| `inversion` | n/a | |
+| `inversion` | `cases` | Cases should be applied to dependent arguments first |
 | `left` | `left` | |
 | `omega` | n/a | smt support? |
 | `pose` | `pose` | `let` in git versions |
