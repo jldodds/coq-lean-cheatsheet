@@ -63,6 +63,7 @@ The main table is for the Lean release. Notes highlight some tactics that have c
 | `transitivity` | `transitivity` | |
 | `trivial` | `trivial` | |
 | `try T` | `try {T}` | curly braces required |
+| `typeclasses eauto` | `apply_instance` | |
 | `unfold` | `unfold` | |
 | `unfold in` | `unfold at` | |
 
