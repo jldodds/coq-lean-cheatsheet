@@ -15,7 +15,7 @@ The main table is for the Lean release. Notes highlight some tactics that have c
 | `admit` | `admit` | |
 | `apply` | n/a | lean `apply` is coq `eapply` |
 | `apply H in A` | `note A2 := H A` | Will create a new hypothesis A2, and A will persist, `note` is `have` in git versions |
-| `assert` | `assert` | |
+| `assert` | `assert` | `assert` is now `have` in git, `assert x : H` becomes `have x : H` |
 | `auto`  | n/a | |
 | `autorewrite` | n/a | `simp using <attribute>` approximates |
 | `change` | `change` | |
@@ -45,10 +45,11 @@ The main table is for the Lean release. Notes highlight some tactics that have c
 | `pose` | `pose` | `let` in git versions |
 | `pose proof` | `note` | `have` in git versions |
 | `progress` | n/a | lean tactics by convention should fail if they don't progress|
-| `remember x as y eqn:h` | `generalize2 x y h` | names must be provided |
+| `remember x as y eqn:h` | `generalize2 x y h` | names must be provided, in git `generalize h : x = y` |
 | `revert` | n/a | always dependent|
 | `revert dependent` | `revert` | |
-| `rewrite` | `rewrite`, `rw` | 
+| `rewrite` | `rewrite`, `rw` | |
+| `rewrite <-` | `rewrite <-`, `rw` | |
 | `right` | `right` | |
 | `simpl` | `dsimp` | to some approximation at least.. |
 | `simpl in` | `dsimp at` | |
