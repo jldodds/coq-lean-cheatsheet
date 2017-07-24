@@ -66,4 +66,5 @@ The main table is for the Lean release. Notes highlight some tactics that have c
 | `typeclasses eauto` | `apply_instance` | |
 | `unfold` | `unfold` | |
 | `unfold in` | `unfold at` | |
+| `unshelve eapply` | `fapply` | |
 
