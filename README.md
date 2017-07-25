@@ -31,7 +31,7 @@ The main table is for the Lean release. Notes highlight some tactics that have c
 | `eexists` | `existsi _` | |
 | `f_equal` | `apply congr_args` | only works if `f` is unary |
 | `fail` | `fail_if_success {skip}` | |
-| `first [A | B |.. | X]` | `A <|> B <|> .. <|> X` | `first [A B .. X]` on git| 
+| `first [A \| B \|.. \| X]` | `A <\|> B <\|> .. <\|> X` | `first [A B .. X]` on git| 
 | `generalize x` | `generalize x y` | `y` is name of the new variable, the name must be provided |
 | `generalize dependent` | `revert` | |
 | `idtac` | `skip` | `skip` does not print, succeeds trivially |
