@@ -74,6 +74,7 @@ Similar options from Coq exist in Lean as well. Whereas Coq options are set and 
 |------------|-------------|-------|
 | `Printing Implicit` | `pp.implicit` | |
 | `Printing Universes` | `pp.universes` | |
+| `Printing Notations` | `pp.notation` | |
 
 And other Vernacular:
 
