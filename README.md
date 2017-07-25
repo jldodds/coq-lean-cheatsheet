@@ -68,3 +68,18 @@ The main table is for the Lean release. Notes highlight some tactics that have c
 | `unfold in` | `unfold at` | |
 | `unshelve eapply` | `fapply` | |
 
+Similar options from Coq exist in Lean as well. Whereas Coq options are set and unset with the Vernacular `Set option` and `Unset option`, Lean options are set with `set option true` and unset with `set option false`. Here is a list of Coq options and their Lean versions:
+
+| Coq option | Lean option | Notes |
+|------------|-------------|-------|
+| `Printing Implicit` | `pp.implicit` | |
+| `Printing Universes` | `pp.universes` | |
+
+And other Vernacular:
+
+| Coq Vernacular | Lean directive | Notes |
+|----------------|----------------|-------|
+| `Opaque ident` | `attribute [irreducible] ident` | |
+| `Transparent ident` | `attribute [reducible] ident` | |
+| `Check term` | `#check term` | |
+| `Print term` | `#print term` | |
