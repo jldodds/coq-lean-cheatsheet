@@ -1,7 +1,7 @@
 # Coq to Lean Tactic Cheatsheet
 This is a guide for [coq](https://coq.inria.fr/) users getting into writing [lean](https://leanprover.github.io/) proofs.
 
-Right now this is for my favorite tactics. Please PR your own or request additions via issue tracker or [lean gitter](https://gitter.im/leanprover_public/Lobby).
+Please PR your own or request additions via issue tracker or [lean gitter](https://gitter.im/leanprover_public/Lobby).
 
 n/a doesn't mean it doesn't exist, only that I don't know about it.
 
@@ -84,3 +84,11 @@ And other Vernacular:
 | `Transparent ident` | `attribute [reducible] ident` | |
 | `Check term` | `#check term` | |
 | `Print term` | `#print term` | |
+| `Proof with P` | `include P` | `include P` makes `P` available to all proofs, as well as typeclass resolution if it is an instance |
+
+Variables and sections
+
+| Coq construct | Lean construct | Notes |
+| -             | -              | -     |
+| `Variable`      | `parameter`      | only within a section. Lean `variable` does not automatically apply arguments within the section |
+ 

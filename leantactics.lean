@@ -1,4 +1,3 @@
-#print or
 
 inductive threeorfour : nat -> Prop 
 | isthree : forall (n : nat),  n=3 -> threeorfour n
