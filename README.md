@@ -84,7 +84,7 @@ And other Vernacular:
 | `Transparent ident` | `attribute [reducible] ident` | |
 | `Check term` | `#check term` | |
 | `Print term` | `#print term` | |
-| `Proof with P` | `include P` | `include P` makes `P` available to all proofs, as well as typeclass resolution if it is an instance |
+| `Proof using P` | `include P` | `include P` makes `P` available to all proofs, as well as typeclass resolution if it is an instance. `omit P` un-includes `P` |
 
 Variables and sections
 
