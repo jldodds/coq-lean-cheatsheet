@@ -14,7 +14,7 @@ The main table is for the Lean release. Notes highlight some tactics that have c
 | `assumption` | `assumption`   |      |
 | `admit` | `admit` | |
 | `apply` | n/a | lean `apply` is coq `eapply` |
-| `apply H in A` | `note A2 := H A` | Will create a new hypothesis A2, and A will persist, `note` is `have` in git versions |
+| `apply H in A` | `note A2 := H A` | Will create a new hypothesis A2, and A will persist, `note` is `have` in git versions, see [coq-tactic-substitutes.lean](coq-tactic-substitutes.lean) for a closer approximation |
 | `assert` | `assert` | `assert` is now `have` in git, `assert x : H` becomes `have x : H` |
 | `auto`  | n/a | |
 | `autorewrite` | n/a | `simp using <attribute>` approximates |
@@ -29,7 +29,7 @@ The main table is for the Lean release. Notes highlight some tactics that have c
 | `exfalso` | `exfalso` | |
 | `exists` | `existsi` | |
 | `eexists` | `existsi _` | |
-| `f_equal` | `apply congr_args` | only works if `f` is unary |
+| `f_equal` | `apply congr_args` | only works if `f` is unary, see [coq-tactic-substitutes.lean](coq-tactic-substitutes.lean) for a closer approximation |
 | `fail` | `fail_if_success {skip}` | |
 | `first [A \| B \|.. \| X]` | `A <\|> B <\|> .. <\|> X` | `first [A B .. X]` on git| 
 | `generalize x` | `generalize x y` | `y` is name of the new variable, the name must be provided |
@@ -55,7 +55,7 @@ The main table is for the Lean release. Notes highlight some tactics that have c
 | `simpl in` | `dsimp at` | |
 | `simpl in *` | n/a| `dsimp at *` on git |
 | `solve` | `solve1` | |
-| `specialize H x` | `note H2 := H x` | H remains, note is `have` in git versions |
+| `specialize (H e)` | `note H2 := H x` | H remains, note is `have` in git versions, see [coq-tactic-substitutes.lean](coq-tactic-substitutes.lean) for a closer approximation |
 | `split` | `split` | |
 | `subst x` | `subst x` | |
 | `subst` | n/a | |
