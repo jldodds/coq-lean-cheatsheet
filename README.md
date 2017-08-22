@@ -55,7 +55,7 @@ The main table is for the Lean release. Notes highlight some tactics that have c
 | `simpl in` | `dsimp at` | |
 | `simpl in *` | n/a| `dsimp at *` on git |
 | `solve` | `solve1` | |
-| `specialize (H e)` | `note H2 := H x` | H remains, note is `have` in git versions, see [coq-tactic-substitutes.lean](coq-tactic-substitutes.lean) for a closer approximation |
+| `specialize (H e)` | `note H2 := H x` | H remains, note is `have` in git versions, there is now a `specialize` tactic (that works like Coq's) in git as well |
 | `split` | `split` | |
 | `subst x` | `subst x` | |
 | `subst` | n/a | |
