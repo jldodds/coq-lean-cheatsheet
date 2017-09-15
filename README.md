@@ -5,7 +5,7 @@ Please PR your own or request additions via issue tracker or [lean gitter](https
 
 n/a doesn't mean it doesn't exist, only that I don't know about it.
 
-The main table is for the Lean release. Notes highlight some tactics that have changed in the most recent source versions.
+The main table is for the Lean release v3.3.0.
 
 | Coq Tactic | Lean Tactic | Notes |
 | ---------- | ----------- | ------|
@@ -14,8 +14,8 @@ The main table is for the Lean release. Notes highlight some tactics that have c
 | `assumption` | `assumption`   |      |
 | `admit` | `admit` | |
 | `apply` | n/a | lean `apply` is coq `eapply` |
-| `apply H in A` | `note A2 := H A` | Will create a new hypothesis A2, and A will persist, `note` is `have` in git versions, see [coq-tactic-substitutes.lean](coq-tactic-substitutes.lean) for a closer approximation |
-| `assert` | `assert` | `assert` is now `have` in git, `assert x : H` becomes `have x : H` |
+| `apply H in A` | `have A2 := H A` | Will create a new hypothesis A2, and A will persist, see [coq-tactic-substitutes.lean](coq-tactic-substitutes.lean) for a closer approximation |
+| `assert` | `have` | |
 | `auto`  | n/a | |
 | `autorewrite` | n/a | `simp using <attribute>` approximates |
 | `change` | `change` | |
@@ -31,7 +31,7 @@ The main table is for the Lean release. Notes highlight some tactics that have c
 | `eexists` | `existsi _` | |
 | `f_equal` | `apply congr_args` | only works if `f` is unary, see [coq-tactic-substitutes.lean](coq-tactic-substitutes.lean) for a closer approximation |
 | `fail` | `fail_if_success {skip}` | |
-| `first [A \| B \|.. \| X]` | `A <\|> B <\|> .. <\|> X` | `first [A B .. X]` on git| 
+| `first [A \| B \|.. \| X]` | `first [A B .. X]` | | 
 | `generalize x` | `generalize x y` | `y` is name of the new variable, the name must be provided |
 | `generalize dependent` | `revert` | |
 | `idtac` | `skip` | `skip` does not print, succeeds trivially |
@@ -42,10 +42,10 @@ The main table is for the Lean release. Notes highlight some tactics that have c
 | `inversion` | `cases` | Cases should be applied to dependent arguments first |
 | `left` | `left` | |
 | `omega` | n/a | smt support? |
-| `pose` | `pose` | `let` in git versions |
-| `pose proof` | `note` | `have` in git versions |
+| `pose` | `let` | |
+| `pose proof` | `have` | |
 | `progress` | n/a | lean tactics by convention should fail if they don't progress|
-| `remember x as y eqn:h` | `generalize2 x y h` | names must be provided, in git `generalize h : x = y` |
+| `remember x as y eqn:h` | `generalize h : x = y` | names must be provided |
 | `revert` | n/a | always dependent|
 | `revert dependent` | `revert` | |
 | `rewrite` | `rewrite`, `rw` | |
@@ -53,9 +53,9 @@ The main table is for the Lean release. Notes highlight some tactics that have c
 | `right` | `right` | |
 | `simpl` | `dsimp` | to some approximation at least.. |
 | `simpl in` | `dsimp at` | |
-| `simpl in *` | n/a| `dsimp at *` on git |
+| `simpl in *` | `dsimp at *` | |
 | `solve` | `solve1` | |
-| `specialize (H e)` | `note H2 := H x` | H remains, note is `have` in git versions, there is now a `specialize` tactic (that works like Coq's) in git as well |
+| `specialize (H e)` | `specialize (H e)` |  |
 | `split` | `split` | |
 | `subst x` | `subst x` | |
 | `subst` | n/a | |
