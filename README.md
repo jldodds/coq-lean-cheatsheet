@@ -32,7 +32,7 @@ The main table is for the Lean release v3.3.0.
 | `f_equal` | `apply congr_args` | only works if `f` is unary, see [coq-tactic-substitutes.lean](coq-tactic-substitutes.lean) for a closer approximation |
 | `fail` | `fail_if_success {skip}` | |
 | `first [A \| B \|.. \| X]` | `first [A B .. X]` | | 
-| `generalize x` | `generalize x y` | `y` is name of the new variable, the name must be provided |
+| `generalize x` | `generalize : x = y` | `y` is name of the new variable, the name must be provided |
 | `generalize dependent` | `revert` | |
 | `idtac` | `skip` | `skip` does not print, succeeds trivially |
 | `induction` | `induction` | | 
