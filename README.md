@@ -13,7 +13,7 @@ The main table is for the Lean release v3.3.0.
 |  `.`       |   `,`       |       |
 | `assumption` | `assumption`   |      |
 | `admit` | `admit` | |
-| `apply` | n/a | lean `apply` is coq `eapply` |
+| `apply` | `eapply` | lean `apply` is coq `eapply` |
 | `apply H in A` | `have A2 := H A` | Will create a new hypothesis A2, and A will persist, see [coq-tactic-substitutes.lean](coq-tactic-substitutes.lean) for a closer approximation |
 | `assert` | `have` | |
 | `auto`  | n/a | |
