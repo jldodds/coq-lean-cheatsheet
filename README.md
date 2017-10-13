@@ -91,4 +91,5 @@ Variables and sections
 | Coq construct | Lean construct | Notes |
 | -             | -              | -     |
 | `Variable`      | `parameter`      | only within a section. Lean `variable` does not automatically apply arguments within the section |
+| `Universes` | `universes` | |
  
