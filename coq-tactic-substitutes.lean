@@ -1,5 +1,3 @@
-import .option
-
 open tactic lean lean.parser
 open interactive interactive.types expr
 
