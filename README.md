@@ -51,7 +51,7 @@ The main table is for the Lean release v3.3.0.
 | `rewrite` | `rewrite`, `rw` | |
 | `rewrite <-` | `rewrite <-`, `rw` | |
 | `right` | `right` | |
-| `simpl` | `dsimp` | to some approximation at least.. |
+| `simpl` | `dsimp` | to some approximation at least. `simp only` might be closer |
 | `simpl in` | `dsimp at` | |
 | `simpl in *` | `dsimp at *` | |
 | `solve` | `solve1` | |
