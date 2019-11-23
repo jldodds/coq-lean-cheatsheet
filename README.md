@@ -27,12 +27,12 @@ The main table is for the Lean release v3.3.0.
 | `eapply` | `apply` | |
 | `exact` | `exact` | |
 | `exfalso` | `exfalso` | |
-| `exists` | `existsi` | |
+| `exists` | `existsi` or `use` | |
 | `eexists` | `existsi _` | |
-| `f_equal` | `apply congr_args` | only works if `f` is unary, see [coq-tactic-substitutes.lean](coq-tactic-substitutes.lean) for a closer approximation |
+| `f_equal` | `congr' 1` |  |
 | `fail` | `fail_if_success {skip}` | |
 | `first [A \| B \|.. \| X]` | `first [A B .. X]` | | 
-| `generalize x` | `generalize : x = y` | `y` is name of the new variable, the name must be provided |
+| `generalize t` | `generalize : t = y` | `y` is name of the new variable, the name must be provided |
 | `generalize dependent` | `revert` | |
 | `idtac` | `skip` | `skip` does not print, succeeds trivially |
 | `induction` | `induction` | | 
@@ -41,7 +41,7 @@ The main table is for the Lean release v3.3.0.
 | `intuition` | n/a | |
 | `inversion` | `cases` | Cases should be applied to dependent arguments first |
 | `left` | `left` | |
-| `omega` | n/a | smt support? |
+| `omega` |`omega` |  |
 | `pose` | `let` | |
 | `pose proof` | `have` | |
 | `progress` | n/a | lean tactics by convention should fail if they don't progress|
@@ -68,13 +68,13 @@ The main table is for the Lean release v3.3.0.
 | `unfold in` | `unfold at` | |
 | `unshelve eapply` | `fapply` | |
 
-Similar options from Coq exist in Lean as well. Whereas Coq options are set and unset with the Vernacular `Set option` and `Unset option`, Lean options are set with `set option true` and unset with `set option false`. Here is a list of Coq options and their Lean versions:
+Similar options from Coq exist in Lean as well. Whereas Coq options are set and unset with the Vernacular `Set option` and `Unset option`, Lean options toggled with `set_option <option> true` and `set_option <option> false`. Here is a list of Coq options and their Lean versions:
 
 | Coq option | Lean option | Notes |
 |------------|-------------|-------|
-| `Printing Implicit` | `pp.implicit` | |
-| `Printing Universes` | `pp.universes` | |
-| `Printing Notations` | `pp.notation` | |
+| `Printing Implicit` | `pp.implicit` | default `false` |
+| `Printing Universes` | `pp.universes` | default `false` |
+| `Printing Notations` | `pp.notation` | default `true` |
 
 And other Vernacular:
 
@@ -83,7 +83,7 @@ And other Vernacular:
 | `Opaque ident` | `attribute [irreducible] ident` | |
 | `Transparent ident` | `attribute [reducible] ident` | |
 | `Check term` | `#check term` | |
-| `Print term` | `#print term` | |
+| `Print term` | `#print term` | Can also be used to print structures, inductive types, notation |
 | `Proof using P` | `include P` | `include P` makes `P` available to all proofs, as well as typeclass resolution if it is an instance. `omit P` un-includes `P` |
 
 Variables and sections
@@ -91,5 +91,5 @@ Variables and sections
 | Coq construct | Lean construct | Notes |
 | -             | -              | -     |
 | `Variable`      | `parameter`      | only within a section. Lean `variable` does not automatically apply arguments within the section |
-| `Universes` | `universes` | |
+| `Universes` | `universes` | use `universe variables` if you want to declare the universes, but not fix them for the file |
  
