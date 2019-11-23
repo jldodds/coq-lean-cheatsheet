@@ -27,9 +27,9 @@ The main table is for the Lean release v3.3.0.
 | `eapply` | `apply` | |
 | `exact` | `exact` | |
 | `exfalso` | `exfalso` | |
-| `exists` | `existsi` or `use` | |
+| `exists` | `existsi` | `use` is the same, but takes the expected type into account. `use` requires [mathlib](https://github.com/leanprover-community/mathlib) |
 | `eexists` | `existsi _` | |
-| `f_equal` | `congr' 1` |  |
+| `f_equal` | `congr' 1` | requires [mathlib](https://github.com/leanprover-community/mathlib) |
 | `fail` | `fail_if_success {skip}` | |
 | `first [A \| B \|.. \| X]` | `first [A B .. X]` | | 
 | `generalize t` | `generalize : t = y` | `y` is name of the new variable, the name must be provided |
@@ -41,7 +41,7 @@ The main table is for the Lean release v3.3.0.
 | `intuition` | n/a | |
 | `inversion` | `cases` | Cases should be applied to dependent arguments first |
 | `left` | `left` | |
-| `omega` |`omega` |  |
+| `omega` |`omega` | requires [mathlib](https://github.com/leanprover-community/mathlib). Might not have the same features as Coq's `omega` |
 | `pose` | `let` | |
 | `pose proof` | `have` | |
 | `progress` | n/a | lean tactics by convention should fail if they don't progress|
